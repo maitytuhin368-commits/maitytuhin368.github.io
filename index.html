@@ -1,68 +1,90 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
   <title>Aim2Rise Coaching</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- GOOGLE FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg,#0f172a,#1e293b);
+      background: #0f172a;
       color: white;
+      scroll-behavior: smooth;
     }
 
-    section {
-      padding: 70px 20px;
+    /* NAVBAR */
+    .nav {
+      position: sticky;
+      top: 0;
+      background: rgba(15,23,42,0.9);
+      padding: 15px;
       text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav a {
+      color: #38bdf8;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    section:hover {
+      transform: scale(1.01);
     }
 
     h1 {
-      font-size: 44px;
+      font-size: 42px;
       font-weight: 700;
-      letter-spacing: 1px;
     }
 
     h2 {
-      font-size: 28px;
-      font-weight: 600;
+      font-size: 26px;
     }
 
     p {
-      font-size: 16px;
-      opacity: 0.9;
+      max-width: 600px;
+      margin: 10px auto;
+      opacity: 0.85;
     }
 
-    /* HERO */
-    .hero {
-      padding: 100px 20px;
+    /* GRADIENT TEXT */
+    .highlight {
+      background: linear-gradient(45deg,#38bdf8,#22c55e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     /* BUTTON */
     .btn {
       margin-top: 25px;
-      padding: 14px 30px;
-      background: linear-gradient(45deg,#22c55e,#38bdf8);
+      padding: 12px 28px;
+      background: #38bdf8;
       border: none;
       border-radius: 30px;
-      font-size: 16px;
       color: white;
       cursor: pointer;
       transition: 0.3s;
-      box-shadow: 0 5px 15px rgba(56,189,248,0.4);
     }
 
     .btn:hover {
+      background: #0ea5e9;
       transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(56,189,248,0.6);
     }
 
-    /* LIGHT SECTION */
+    /* LIGHT */
     .light {
-      background: #f8fafc;
+      background: #f1f5f9;
       color: #0f172a;
     }
 
@@ -71,39 +93,38 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 25px;
+      gap: 20px;
       margin-top: 30px;
     }
 
     .card {
       background: white;
       color: #0f172a;
-      padding: 25px;
-      width: 260px;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      padding: 20px;
+      width: 240px;
+      border-radius: 12px;
       transition: 0.3s;
-      font-weight: 500;
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
 
-    /* ANIMATION */
-    .fade {
-      animation: fadeIn 1s ease-in;
+    /* FADE-IN */
+    .hidden {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 1s;
     }
 
-    @keyframes fadeIn {
-      from {opacity:0; transform: translateY(25px);}
-      to {opacity:1; transform: translateY(0);}
+    .show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    /* FOOTER */
     .footer {
-      background:#020617;
+      background: #020617;
     }
 
   </style>
@@ -111,9 +132,16 @@
 
 <body>
 
+<!-- NAVBAR -->
+<div class="nav">
+  <a href="#home">Home</a>
+  <a href="#courses">Courses</a>
+  <a href="#about">About</a>
+</div>
+
 <!-- HERO -->
-<section class="hero fade">
-  <h1>Aim2Rise Coaching</h1>
+<section id="home" class="hidden">
+  <h1>Aim2Rise <span class="highlight">Coaching</span></h1>
   <p>Unlock Your Confidence, Skills, and Dreams</p>
   <p>Empowering Students of All Ages</p>
 
@@ -123,61 +151,68 @@
 </section>
 
 <!-- ALL AGES -->
-<section class="light fade">
+<section class="light hidden">
   <h2>All Ages Welcome</h2>
   <p>For children, young adults, and everyone in between</p>
   <p>Gain confidence and skills at every stage</p>
 </section>
 
 <!-- COURSES -->
-<section class="fade">
+<section id="courses" class="hidden">
   <h2>Courses We Offer</h2>
 
   <div class="cards">
-    <div class="card">All subjects for grades 5 to 10</div>
-    <div class="card">11th and 12th (Commerce & Humanities)</div>
-    <div class="card">B.Com and BBA classes</div>
-    <div class="card">Spoken English (Basic to Advanced)</div>
+    <div class="card">Grades 5–10 (All Subjects)</div>
+    <div class="card">11th–12th (Commerce & Humanities)</div>
+    <div class="card">B.Com & BBA Classes</div>
+    <div class="card">Spoken English (Basic–Advanced)</div>
     <div class="card">English Grammar</div>
     <div class="card">Personality Development</div>
-    <div class="card">Computer Basic Course</div>
+    <div class="card">Computer Basics</div>
     <div class="card">Reasoning Classes</div>
   </div>
 </section>
 
-<!-- TEACHING -->
-<section class="light fade">
+<!-- ABOUT -->
+<section id="about" class="light hidden">
   <h2>Teaching Approach</h2>
   <p>Passionate teachers providing personal attention</p>
-  <p>Innovative, engaging methods in every class</p>
+  <p>Innovative and engaging methods in every class</p>
 </section>
 
 <!-- SUCCESS -->
-<section class="fade">
+<section class="hidden">
   <h2>Proven Success</h2>
-  <p>In the past 7 years, we have guided thousands of students</p>
+  <p>Over 7 years, we have guided thousands of students</p>
 </section>
 
 <!-- GLOBAL -->
-<section class="light fade">
+<section class="light hidden">
   <h2>Global Reach</h2>
-  <p>Online in Roorkee, West Bengal, Rajasthan, Australia, Dubai, and Punjab</p>
-  <p>Offline in Zirakpur, Punjab</p>
-</section>
-
-<!-- AFFORDABLE -->
-<section class="fade">
-  <h2>Affordable & Accessible</h2>
-  <p>Join online or offline at budget-friendly fees</p>
-  <p>A dedicated system designed for your success</p>
+  <p>Online: Roorkee, West Bengal, Rajasthan, Australia, Dubai, Punjab</p>
+  <p>Offline: Zirakpur, Punjab</p>
 </section>
 
 <!-- FOOTER -->
-<section class="footer fade">
+<section class="footer hidden">
   <h2>Our Promise</h2>
   <p>Improvement is our guarantee</p>
   <p>Hard work is your responsibility</p>
 </section>
 
+<script>
+  const elements = document.querySelectorAll('.hidden');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+
 </body>
-</html>
+</html>     
