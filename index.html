@@ -7,12 +7,9 @@
 <title>Aim2Rise Coaching</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- ICON LIBRARY -->
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -21,8 +18,32 @@
 }
 
 body{
-    background: radial-gradient(circle at top,#0f172a,#020617);
+    background:#020617;
     color:white;
+    overflow-x:hidden;
+}
+
+/* GLOW BACKGROUND */
+body::before, body::after{
+    content:'';
+    position:fixed;
+    width:400px;
+    height:400px;
+    filter:blur(120px);
+    z-index:-1;
+    opacity:0.4;
+}
+
+body::before{
+    background:#38bdf8;
+    top:-100px;
+    left:-100px;
+}
+
+body::after{
+    background:#4ade80;
+    bottom:-100px;
+    right:-100px;
 }
 
 /* NAVBAR */
@@ -36,7 +57,6 @@ nav{
     align-items:center;
     background:rgba(2,6,23,0.7);
     backdrop-filter:blur(12px);
-    z-index:100;
 }
 
 nav h1{
@@ -45,7 +65,7 @@ nav h1{
 
 nav div{
     display:flex;
-    gap:14px;
+    gap:15px;
 }
 
 nav a{
@@ -56,18 +76,19 @@ nav a{
 
 /* SECTION */
 section{
-    padding:90px 20px;
+    padding:100px 20px;
 }
 
 /* HERO */
 .hero{
     text-align:center;
-    padding-top:120px;
+    padding-top:130px;
 }
 
 .hero h1{
     font-size:34px;
     line-height:1.4;
+    animation:fadeUp 1s ease;
 }
 
 .gradient{
@@ -89,6 +110,12 @@ section{
     background:linear-gradient(90deg,#38bdf8,#4ade80);
     color:white;
     font-weight:500;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(56,189,248,0.5);
 }
 
 /* STATS */
@@ -103,7 +130,7 @@ section{
     color:#38bdf8;
 }
 
-/* SECTION HEADER */
+/* TITLES */
 .section-title{
     font-size:26px;
     font-weight:600;
@@ -119,18 +146,14 @@ section{
 .card{
     background:rgba(255,255,255,0.05);
     border:1px solid rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
     padding:22px;
     border-radius:20px;
     margin-top:20px;
 }
 
-/* WHY LIST */
+/* WHY */
 .why-item{
-    display:flex;
-    gap:10px;
     margin-bottom:15px;
-    align-items:center;
 }
 
 /* COURSE GRID */
@@ -140,7 +163,6 @@ section{
     margin-top:20px;
 }
 
-/* COURSE CARD */
 .course-card{
     display:flex;
     gap:16px;
@@ -153,11 +175,11 @@ section{
 }
 
 .course-card:hover{
-    transform:translateY(-6px);
-    background:rgba(255,255,255,0.07);
+    transform:translateY(-8px);
+    box-shadow:0 0 25px rgba(56,189,248,0.3);
 }
 
-/* ICON FIXED */
+/* ICON */
 .icon{
     width:48px;
     height:48px;
@@ -196,6 +218,29 @@ footer{
     color:#94a3b8;
 }
 
+/* SCROLL ANIMATION */
+.fade{
+    opacity:0;
+    transform:translateY(30px);
+    transition:0.8s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* KEYFRAME */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 </style>
 </head>
 
@@ -213,7 +258,7 @@ footer{
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero fade">
     <h1>
         Build Confidence.<br>
         <span class="gradient">Speak Fluently.</span><br>
@@ -233,108 +278,78 @@ footer{
 </section>
 
 <!-- WHY -->
-<section>
+<section class="fade">
     <div class="section-title">Why Choose Aim2Rise?</div>
     <div class="section-sub">Because your growth deserves more than just teaching.</div>
 
     <div class="card">
         <div class="why-item">✔ Personal attention to every student</div>
-        <div class="why-item">✔ Practical & engaging teaching methods</div>
-        <div class="why-item">✔ Courses designed for real-world skills</div>
+        <div class="why-item">✔ Practical & engaging teaching</div>
+        <div class="why-item">✔ Real-world skills focused</div>
         <div class="why-item">✔ Flexible online & offline learning</div>
     </div>
 </section>
 
 <!-- COURSES -->
-<section>
+<section class="fade">
     <div class="section-title">Courses We Offer</div>
-    <div class="section-sub">Programs designed for every stage of your journey.</div>
+    <div class="section-sub">Programs for every stage.</div>
 
     <div class="course-grid">
 
         <div class="course-card">
             <div class="icon"><i data-lucide="book-open"></i></div>
-            <div>
-                <div class="course-title">Grades 5–10</div>
-                <div class="course-tag">All Subjects</div>
-            </div>
+            <div><div class="course-title">Grades 5–10</div><div class="course-tag">All Subjects</div></div>
         </div>
 
         <div class="course-card">
             <div class="icon"><i data-lucide="graduation-cap"></i></div>
-            <div>
-                <div class="course-title">11th–12th</div>
-                <div class="course-tag">Commerce & Humanities</div>
-            </div>
+            <div><div class="course-title">11th–12th</div><div class="course-tag">Commerce & Humanities</div></div>
         </div>
 
         <div class="course-card">
             <div class="icon"><i data-lucide="building"></i></div>
-            <div>
-                <div class="course-title">B.Com & BBA</div>
-                <div class="course-tag">University Level</div>
-            </div>
+            <div><div class="course-title">B.Com & BBA</div><div class="course-tag">University Level</div></div>
         </div>
 
         <div class="course-card">
             <div class="icon"><i data-lucide="mic"></i></div>
-            <div>
-                <div class="course-title">Spoken English</div>
-                <div class="course-tag">Basic to Advanced</div>
-            </div>
+            <div><div class="course-title">Spoken English</div><div class="course-tag">Basic to Advanced</div></div>
         </div>
 
         <div class="course-card">
             <div class="icon"><i data-lucide="pen-tool"></i></div>
-            <div>
-                <div class="course-title">English Grammar</div>
-                <div class="course-tag">Foundation to Advanced</div>
-            </div>
+            <div><div class="course-title">English Grammar</div><div class="course-tag">Foundation to Advanced</div></div>
         </div>
 
         <div class="course-card">
             <div class="icon"><i data-lucide="sparkles"></i></div>
-            <div>
-                <div class="course-title">Personality Development</div>
-                <div class="course-tag">Confidence & Growth</div>
-            </div>
+            <div><div class="course-title">Personality Development</div><div class="course-tag">Confidence & Growth</div></div>
         </div>
 
         <div class="course-card">
             <div class="icon"><i data-lucide="laptop"></i></div>
-            <div>
-                <div class="course-title">Computer Basics</div>
-                <div class="course-tag">Digital Skills</div>
-            </div>
+            <div><div class="course-title">Computer Basics</div><div class="course-tag">Digital Skills</div></div>
         </div>
 
         <div class="course-card">
             <div class="icon"><i data-lucide="brain"></i></div>
-            <div>
-                <div class="course-title">Reasoning</div>
-                <div class="course-tag">Logical Thinking</div>
-            </div>
+            <div><div class="course-title">Reasoning</div><div class="course-tag">Logical Thinking</div></div>
         </div>
 
     </div>
 </section>
 
 <!-- REACH -->
-<section>
+<section class="fade">
     <div class="section-title">Global Reach</div>
-    <div class="section-sub">Learning without boundaries.</div>
 
-    <div class="card">
-        🌐 Online: Roorkee, West Bengal, Rajasthan, Australia, Dubai, Punjab
-    </div>
-
-    <div class="card">
-        📍 Offline: Zirakpur, Punjab
-    </div>
+    <div class="card">🌐 Online: Roorkee, West Bengal, Rajasthan, Australia, Dubai, Punjab</div>
+    <div class="card">📍 Offline: Zirakpur, Punjab</div>
 </section>
 
 <!-- PROMISE -->
-<section class="promise">
+<section class="promise fade">
     <div class="section-title">Our Promise</div>
 
     <h1 class="gradient">Improvement is our Guarantee.</h1>
@@ -355,6 +370,18 @@ footer{
 
 <script>
 lucide.createIcons();
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+document.querySelectorAll('.fade').forEach(el=>{
+    observer.observe(el);
+});
 </script>
 
 </body>
