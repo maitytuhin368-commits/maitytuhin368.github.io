@@ -6,382 +6,307 @@
 
 <title>Aim2Rise Coaching</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- ICONS -->
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+--bg:#050d1a;
+--card:rgba(255,255,255,0.05);
+--border:rgba(255,255,255,0.08);
+--text:#eaf2ff;
+--muted:#8aa4c5;
+--accent:#38bdf8;
+--accent2:#4ade80;
 }
 
 body{
-    background:#020617;
-    color:white;
-    overflow-x:hidden;
+font-family:'DM Sans',sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
 }
 
-/* GLOW BACKGROUND */
+/* GLOW */
 body::before, body::after{
-    content:'';
-    position:fixed;
-    width:400px;
-    height:400px;
-    filter:blur(120px);
-    z-index:-1;
-    opacity:0.4;
+content:'';
+position:fixed;
+width:450px;height:450px;
+filter:blur(120px);
+z-index:-1;
+opacity:.25;
 }
+body::before{background:var(--accent);top:-150px;left:-150px;}
+body::after{background:var(--accent2);bottom:-150px;right:-150px;}
 
-body::before{
-    background:#38bdf8;
-    top:-100px;
-    left:-100px;
-}
-
-body::after{
-    background:#4ade80;
-    bottom:-100px;
-    right:-100px;
-}
-
-/* NAVBAR */
+/* NAV */
 nav{
-    position:fixed;
-    width:100%;
-    top:0;
-    padding:16px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(2,6,23,0.7);
-    backdrop-filter:blur(12px);
+position:fixed;
+top:0;width:100%;
+display:flex;
+justify-content:space-between;
+padding:18px 24px;
+background:rgba(5,13,26,.7);
+backdrop-filter:blur(10px);
+z-index:100;
 }
-
-nav h1{
-    font-size:20px;
-}
-
-nav div{
-    display:flex;
-    gap:15px;
-}
-
-nav a{
-    color:#cbd5f5;
-    text-decoration:none;
-    font-size:14px;
-}
+nav h1{font-family:'Syne';font-weight:800}
+nav a{color:var(--muted);margin-left:16px;text-decoration:none}
 
 /* SECTION */
 section{
-    padding:100px 20px;
+padding:100px 24px;
+max-width:1100px;
+margin:auto;
 }
 
 /* HERO */
 .hero{
-    text-align:center;
-    padding-top:130px;
+padding-top:140px;
 }
-
 .hero h1{
-    font-size:34px;
-    line-height:1.4;
-    animation:fadeUp 1s ease;
+font-family:'Syne';
+font-size:40px;
+line-height:1.2;
 }
-
-.gradient{
-    background:linear-gradient(90deg,#38bdf8,#4ade80,#fde047);
-    -webkit-background-clip:text;
-    color:transparent;
+.grad{
+background:linear-gradient(90deg,var(--accent),var(--accent2));
+-webkit-background-clip:text;
+color:transparent;
 }
-
 .hero p{
-    margin-top:15px;
-    color:#94a3b8;
+color:var(--muted);
+margin-top:10px;
+max-width:500px;
 }
 
+/* BUTTON */
 .btn{
-    margin-top:25px;
-    padding:14px 30px;
-    border:none;
-    border-radius:40px;
-    background:linear-gradient(90deg,#38bdf8,#4ade80);
-    color:white;
-    font-weight:500;
-    transition:0.3s;
+padding:14px 28px;
+border-radius:30px;
+border:none;
+cursor:pointer;
+background:linear-gradient(90deg,var(--accent),#0ea5e9);
+color:white;
+margin-top:20px;
+transition:.3s;
 }
-
 .btn:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 20px rgba(56,189,248,0.5);
-}
-
-/* STATS */
-.stats{
-    display:flex;
-    justify-content:space-between;
-    margin-top:40px;
-    text-align:center;
-}
-
-.stats h2{
-    color:#38bdf8;
+transform:translateY(-2px);
+box-shadow:0 0 25px rgba(56,189,248,0.4);
 }
 
 /* TITLES */
-.section-title{
-    font-size:26px;
-    font-weight:600;
+.title{
+font-family:'Syne';
+font-size:28px;
+margin-bottom:10px;
 }
-
-.section-sub{
-    font-size:14px;
-    color:#94a3b8;
-    margin-top:5px;
+.sub{
+color:var(--muted);
+margin-bottom:20px;
 }
 
 /* CARD */
 .card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.08);
-    padding:22px;
-    border-radius:20px;
-    margin-top:20px;
+background:var(--card);
+border:1px solid var(--border);
+border-radius:20px;
+padding:22px;
+margin-top:20px;
+backdrop-filter:blur(12px);
+transition:.3s;
+}
+.card:hover{
+transform:translateY(-6px);
+border-color:rgba(56,189,248,0.3);
 }
 
-/* WHY */
-.why-item{
-    margin-bottom:15px;
+/* COURSE ITEM */
+.course-item{
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:14px;
 }
 
-/* COURSE GRID */
-.course-grid{
-    display:grid;
-    gap:18px;
-    margin-top:20px;
-}
-
-.course-card{
-    display:flex;
-    gap:16px;
-    align-items:center;
-    padding:20px;
-    border-radius:18px;
-    background:rgba(255,255,255,0.04);
-    border:1px solid rgba(255,255,255,0.06);
-    transition:0.3s;
-}
-
-.course-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 25px rgba(56,189,248,0.3);
-}
-
-/* ICON */
 .icon{
-    width:48px;
-    height:48px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:12px;
-    background:linear-gradient(135deg,#38bdf8,#4ade80);
+width:36px;
+height:36px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:10px;
+background:rgba(56,189,248,0.15);
 }
 
 .icon svg{
-    width:22px;
-    height:22px;
-    color:white;
+width:18px;
+height:18px;
+color:var(--accent);
 }
 
-/* TEXT */
-.course-title{
-    font-weight:600;
+/* ANIMATION */
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
 }
-
-.course-tag{
-    font-size:12px;
-    color:#94a3b8;
-}
-
-/* PROMISE */
-.promise{
-    text-align:center;
+.fade.show{
+opacity:1;
+transform:translateY(0);
 }
 
 /* FOOTER */
 footer{
-    text-align:center;
-    padding:40px;
-    color:#94a3b8;
+text-align:center;
+padding:40px;
+color:var(--muted);
 }
 
-/* SCROLL ANIMATION */
-.fade{
-    opacity:0;
-    transform:translateY(30px);
-    transition:0.8s;
-}
-
-.fade.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* KEYFRAME */
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+/* MOBILE */
+@media(max-width:768px){
+.hero h1{font-size:34px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
-    <h1>Aim2Rise</h1>
-    <div>
-        <a href="#">Home</a>
-        <a href="#">Courses</a>
-        <a href="#">About</a>
-        <a href="#">Reach</a>
-    </div>
+<h1>Aim2Rise</h1>
+<div>
+<a href="#">Home</a>
+<a href="#">Courses</a>
+<a href="#">About</a>
+<a href="#">Reach</a>
+</div>
 </nav>
 
 <!-- HERO -->
 <section class="hero fade">
-    <h1>
-        Build Confidence.<br>
-        <span class="gradient">Speak Fluently.</span><br>
-        <span class="gradient">Succeed Academically.</span>
-    </h1>
+<h1>
+Unlock Your<br>
+<span class="grad">Confidence & Skills</span>
+</h1>
 
-    <p>Empowering students with real-world skills in academics, communication & personality.</p>
+<p>Empowering students of all ages to grow academically and personally.</p>
 
-    <button class="btn">Explore Courses</button>
-
-    <div class="stats">
-        <div><h2>7+</h2><p>Years</p></div>
-        <div><h2>1000+</h2><p>Students</p></div>
-        <div><h2>8</h2><p>Courses</p></div>
-        <div><h2>6+</h2><p>Regions</p></div>
-    </div>
+<a href="https://instagram.com/aim.2.rise" target="_blank">
+<button class="btn">Join Now</button>
+</a>
 </section>
 
-<!-- WHY -->
+<!-- ALL AGES -->
 <section class="fade">
-    <div class="section-title">Why Choose Aim2Rise?</div>
-    <div class="section-sub">Because your growth deserves more than just teaching.</div>
-
-    <div class="card">
-        <div class="why-item">✔ Personal attention to every student</div>
-        <div class="why-item">✔ Practical & engaging teaching</div>
-        <div class="why-item">✔ Real-world skills focused</div>
-        <div class="why-item">✔ Flexible online & offline learning</div>
-    </div>
+<div class="title">All Ages Welcome</div>
+<div class="card sub">
+For children, young adults, and everyone in between.<br>
+Gain confidence and skills at every stage.
+</div>
 </section>
 
 <!-- COURSES -->
 <section class="fade">
-    <div class="section-title">Courses We Offer</div>
-    <div class="section-sub">Programs for every stage.</div>
+<div class="title">Courses We Offer</div>
+<div class="card">
 
-    <div class="course-grid">
+<div class="course-item">
+<div class="icon"><i data-lucide="book-open"></i></div>
+Grades 6–12 (All Subjects)
+</div>
 
-        <div class="course-card">
-            <div class="icon"><i data-lucide="book-open"></i></div>
-            <div><div class="course-title">Grades 5–10</div><div class="course-tag">All Subjects</div></div>
-        </div>
+<div class="course-item">
+<div class="icon"><i data-lucide="graduation-cap"></i></div>
+Commerce & Humanities
+</div>
 
-        <div class="course-card">
-            <div class="icon"><i data-lucide="graduation-cap"></i></div>
-            <div><div class="course-title">11th–12th</div><div class="course-tag">Commerce & Humanities</div></div>
-        </div>
+<div class="course-item">
+<div class="icon"><i data-lucide="mic"></i></div>
+Spoken English (Basic to Advanced)
+</div>
 
-        <div class="course-card">
-            <div class="icon"><i data-lucide="building"></i></div>
-            <div><div class="course-title">B.Com & BBA</div><div class="course-tag">University Level</div></div>
-        </div>
+<div class="course-item">
+<div class="icon"><i data-lucide="laptop"></i></div>
+Basic Computer Skills
+</div>
 
-        <div class="course-card">
-            <div class="icon"><i data-lucide="mic"></i></div>
-            <div><div class="course-title">Spoken English</div><div class="course-tag">Basic to Advanced</div></div>
-        </div>
+<div class="course-item">
+<div class="icon"><i data-lucide="sparkles"></i></div>
+Personality Development
+</div>
 
-        <div class="course-card">
-            <div class="icon"><i data-lucide="pen-tool"></i></div>
-            <div><div class="course-title">English Grammar</div><div class="course-tag">Foundation to Advanced</div></div>
-        </div>
+<div class="course-item">
+<div class="icon"><i data-lucide="brain"></i></div>
+Reasoning Classes
+</div>
 
-        <div class="course-card">
-            <div class="icon"><i data-lucide="sparkles"></i></div>
-            <div><div class="course-title">Personality Development</div><div class="course-tag">Confidence & Growth</div></div>
-        </div>
+</div>
+</section>
 
-        <div class="course-card">
-            <div class="icon"><i data-lucide="laptop"></i></div>
-            <div><div class="course-title">Computer Basics</div><div class="course-tag">Digital Skills</div></div>
-        </div>
+<!-- TEACHING -->
+<section class="fade">
+<div class="title">Teaching Approach</div>
+<div class="card sub">
+Passionate teachers providing personal attention.<br>
+Innovative and engaging teaching methods.
+</div>
+</section>
 
-        <div class="course-card">
-            <div class="icon"><i data-lucide="brain"></i></div>
-            <div><div class="course-title">Reasoning</div><div class="course-tag">Logical Thinking</div></div>
-        </div>
-
-    </div>
+<!-- SUCCESS -->
+<section class="fade">
+<div class="title">Proven Success</div>
+<div class="card sub">
+7+ years guiding thousands of students.
+</div>
 </section>
 
 <!-- REACH -->
 <section class="fade">
-    <div class="section-title">Global Reach</div>
+<div class="title">Global Reach</div>
+<div class="card sub">
+Online: Roorkee, West Bengal, Rajasthan, Australia, Dubai, Punjab<br>
+Offline: Zirakpur, Punjab
+</div>
+</section>
 
-    <div class="card">🌐 Online: Roorkee, West Bengal, Rajasthan, Australia, Dubai, Punjab</div>
-    <div class="card">📍 Offline: Zirakpur, Punjab</div>
+<!-- AFFORDABLE -->
+<section class="fade">
+<div class="title">Affordable & Accessible</div>
+<div class="card sub">
+Budget-friendly courses designed for your success.
+</div>
 </section>
 
 <!-- PROMISE -->
-<section class="promise fade">
-    <div class="section-title">Our Promise</div>
+<section class="fade" style="text-align:center;">
+<div class="title grad">Improvement is our guarantee</div>
+<p class="sub">Hard work is your responsibility</p>
 
-    <h1 class="gradient">Improvement is our Guarantee.</h1>
-
-    <p style="margin-top:10px;color:#94a3b8;">
-        Hard work is your responsibility. Results are ours.
-    </p>
-
-    <a href="https://instagram.com/aim.2.rise" target="_blank">
-        <button class="btn">Connect on Instagram</button>
-    </a>
+<a href="https://instagram.com/aim.2.rise" target="_blank">
+<button class="btn">Join Aim2Rise Today</button>
+</a>
 </section>
 
 <footer>
-    © 2025 Aim2Rise Coaching<br>
-    @aim.2.rise
+© 2025 Aim2Rise Coaching<br>
+@aim.2.rise
 </footer>
 
 <script>
 lucide.createIcons();
 
-const observer = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-    });
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){e.target.classList.add('show')}
+});
 });
 
-document.querySelectorAll('.fade').forEach(el=>{
-    observer.observe(el);
-});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
 </script>
 
 </body>
