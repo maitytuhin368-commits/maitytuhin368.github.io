@@ -32,7 +32,7 @@ position:fixed;
 top:0;
 width:100%;
 display:flex;
-justify-content:center;
+justify-content:flex-end;
 align-items:center;
 padding:14px 20px;
 background:rgba(5,13,26,0.9);
@@ -42,7 +42,7 @@ z-index:1000;
 
 .nav-links{
 display:flex;
-gap:18px;
+gap:15px;
 }
 
 .nav-links a{
@@ -66,12 +66,18 @@ text-align:center;
 padding:100px 20px 60px;
 }
 
-/* HERO LOGO */
+/* 🔥 LOGO FIX + ANIMATION */
 .hero-logo{
-height:clamp(140px, 25vw, 220px);
-width:auto;
-margin-bottom:30px;
+width:140px;
+height:140px;
 object-fit:contain;
+margin-bottom:20px;
+animation:logoFade 1.2s ease;
+}
+
+@keyframes logoFade{
+0%{opacity:0;transform:scale(0.7);}
+100%{opacity:1;transform:scale(1);}
 }
 
 h1{
@@ -224,7 +230,8 @@ transform:translateY(0);
 <!-- HERO -->
 <section id="home">
 
-<img src="https://68-commits.github.io/aim2rise_logo-1.png" class="hero-logo reveal">
+<!-- ✅ LOGO (FIXED) -->
+<img src="aim2rise_logo-1.png" class="hero-logo reveal" loading="eager" alt="Aim2Rise Logo">
 
 <h1 class="reveal">
 Build Confidence.<br>
@@ -236,7 +243,6 @@ Empowering students of all ages with practical skills in academics, communicatio
 </p>
 
 <div class="btn-group reveal">
-
 <a href="#courses">
 <button class="btn">Explore Courses</button>
 </a>
@@ -244,7 +250,6 @@ Empowering students of all ages with practical skills in academics, communicatio
 <a href="https://instagram.com/aim.2.rise" target="_blank">
 <button class="btn btn-secondary">Instagram ↗</button>
 </a>
-
 </div>
 
 <div class="stats reveal">
@@ -322,14 +327,16 @@ Offline: Zirakpur, Punjab
 <p>© 2025 Aim2Rise Coaching</p>
 
 <p>
-Instagram:
+📧 aim2rise309@gmail.com<br>
+📞 88475 53166
+</p>
+
+<p>
+Instagram: 
 <a href="https://instagram.com/aim.2.rise" target="_blank">
 @aim.2.rise ↗
 </a>
 </p>
-
-<p>Email: aim2rise309@gmail.com</p>
-<p>Contact: +91 88475 53166</p>
 </div>
 
 <script>
