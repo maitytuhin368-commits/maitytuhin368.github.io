@@ -42,14 +42,14 @@ z-index:1000;
 
 .nav-links{
 display:flex;
-gap:25px;
+gap:30px;
 }
 
 .nav-links a{
 color:var(--muted);
 text-decoration:none;
-font-size:15px;
-letter-spacing:0.5px;
+font-size:14px;
+transition:0.3s;
 }
 
 .nav-links a:hover{
@@ -69,21 +69,13 @@ padding:100px 20px 60px;
 
 /* LOGO */
 .hero-logo{
-width:140px;
-height:140px;
+width:180px;
+height:180px;
+margin-bottom:25px;
 object-fit:contain;
-margin-bottom:20px;
-animation:logoFade 1.2s ease;
-background:#050d1a;
-border-radius:50%;
-padding:10px;
 }
 
-@keyframes logoFade{
-0%{opacity:0;transform:scale(0.7);}
-100%{opacity:1;transform:scale(1);}
-}
-
+/* TEXT */
 h1{
 font-family:'Syne';
 font-size:clamp(34px,7vw,64px);
@@ -120,7 +112,6 @@ border:1px solid var(--primary);
 color:var(--primary);
 }
 
-/* BUTTON GROUP */
 .btn-group{
 display:flex;
 gap:12px;
@@ -234,7 +225,8 @@ transform:translateY(0);
 <!-- HERO -->
 <section id="home">
 
-<img src="aim2rise_logo-2.png" class="hero-logo reveal" loading="eager" alt="Aim2Rise Logo">
+<!-- ✅ FIXED LOGO (WILL ALWAYS LOAD) -->
+<img src="https://raw.githubusercontent.com/maitytuhin368/maitytuhin368.github.io/main/aim2rise_logo-2.png" class="hero-logo reveal" alt="Aim2Rise Logo">
 
 <h1 class="reveal">
 Build Confidence.<br>
@@ -329,10 +321,8 @@ Offline: Zirakpur, Punjab
 <div class="footer">
 <p>© 2025 Aim2Rise Coaching</p>
 
-<p>
-aim2rise309@gmail.com<br>
-88475 53166
-</p>
+<p>📧 aim2rise309@gmail.com</p>
+<p>📞 88475 53166</p>
 
 <p>
 Instagram: 
