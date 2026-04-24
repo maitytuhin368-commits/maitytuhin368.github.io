@@ -88,8 +88,9 @@ color:var(--muted);
 max-width:550px;
 }
 
+/* BUTTONS */
 .btn{
-margin-top:25px;
+margin-top:20px;
 padding:12px 28px;
 border:none;
 border-radius:30px;
@@ -97,6 +98,21 @@ background:var(--primary);
 color:white;
 cursor:pointer;
 font-size:14px;
+}
+
+.btn-secondary{
+background:transparent;
+border:1px solid var(--primary);
+color:var(--primary);
+}
+
+/* BUTTON GROUP */
+.btn-group{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:25px;
 }
 
 /* STATS */
@@ -166,9 +182,14 @@ color:var(--primary);
 /* FOOTER */
 .footer{
 text-align:center;
-padding:20px;
-font-size:12px;
+padding:25px;
+font-size:13px;
 color:#aaa;
+}
+
+.footer a{
+color:var(--primary);
+text-decoration:none;
 }
 
 /* REVEAL */
@@ -199,6 +220,7 @@ transform:translateY(0);
 
 <!-- HERO -->
 <section id="home">
+
 <h1 class="reveal">
 Build Confidence.<br>
 <span class="gradient">Speak Fluently. Succeed Academically.</span>
@@ -208,8 +230,20 @@ Build Confidence.<br>
 Empowering students of all ages with practical skills in academics, communication, and personality development.
 </p>
 
-<button class="btn reveal">Join Now</button>
+<!-- BUTTONS -->
+<div class="btn-group reveal">
 
+<a href="#courses">
+<button class="btn">Explore Courses</button>
+</a>
+
+<a href="https://instagram.com/aim.2.rise" target="_blank">
+<button class="btn btn-secondary">Instagram ↗</button>
+</a>
+
+</div>
+
+<!-- STATS -->
 <div class="stats reveal">
 <div>
 <div class="stat-num" data-target="7" data-suffix="+">0</div>
@@ -231,6 +265,7 @@ Empowering students of all ages with practical skills in academics, communicatio
 <p>Regions</p>
 </div>
 </div>
+
 </section>
 
 <!-- COURSES -->
@@ -281,7 +316,13 @@ Offline: Zirakpur, Punjab
 
 <!-- FOOTER -->
 <div class="footer">
-© 2025 Aim2Rise Coaching
+<p>© 2025 Aim2Rise Coaching</p>
+<p>
+Instagram: 
+<a href="https://instagram.com/aim.2.rise" target="_blank">
+@aim.2.rise ↗
+</a>
+</p>
 </div>
 
 <script>
