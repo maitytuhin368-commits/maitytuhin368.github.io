@@ -255,6 +255,7 @@
     #about {
       background: var(--dark); display: flex; gap: 80px;
       align-items: center; max-width: 1200px; margin: 0 auto;
+      padding: 100px 48px;
     }
     .about-left { flex: 1; min-width: 0; }
     .about-right { flex: 1; min-width: 0; }
@@ -337,8 +338,21 @@
     @keyframes fadeDown {
       from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); }
     }
-    .reveal { opacity:0; transform:translateY(40px); transition:opacity .8s ease,transform .8s ease; }
-    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* FIXED: sections visible by default */
+    .reveal {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .reveal.hidden-start {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .reveal.visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
     .reveal-delay-1 { transition-delay:.1s; }
     .reveal-delay-2 { transition-delay:.2s; }
     .reveal-delay-3 { transition-delay:.3s; }
@@ -386,10 +400,10 @@
       </div>
     </div>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-num">7+</div><div class="stat-label">Years of Excellence</div></div>
-      <div class="stat"><div class="stat-num">1000+</div><div class="stat-label">Students Guided</div></div>
-      <div class="stat"><div class="stat-num">8</div><div class="stat-label">Courses Offered</div></div>
-      <div class="stat"><div class="stat-num">6+</div><div class="stat-label">Regions Reached</div></div>
+      <div class="stat"><div class="stat-num" id="s1">7+</div><div class="stat-label">Years of Excellence</div></div>
+      <div class="stat"><div class="stat-num" id="s2">1000+</div><div class="stat-label">Students Guided</div></div>
+      <div class="stat"><div class="stat-num" id="s3">8</div><div class="stat-label">Courses Offered</div></div>
+      <div class="stat"><div class="stat-num" id="s4">6+</div><div class="stat-label">Regions Reached</div></div>
     </div>
   </section>
 
@@ -430,8 +444,4 @@
         </div>
         <div class="feature-item">
           <div class="feature-icon">💡</div>
-          <div class="feature-text"><h4>Innovative Methods</h4><p>Engaging, creative teaching techniques that make even the toughest concepts click.</p></div>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🌍</div>
-          <div class="feature-text"><h4>Online &amp; Offline</h4><p>Flexible learning whether you're next door in Zirakpur or across the globe in Dubai.</
+          <div class="feature-text"><h4>Innovative Methods</h4><p>Engaging, creative teaching techniques that make even the toughest concepts click.</p></
