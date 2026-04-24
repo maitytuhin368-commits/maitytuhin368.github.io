@@ -34,16 +34,43 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:14px 20px;
+padding:12px 18px;
 background:rgba(5,13,26,0.9);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
 
-nav b{
-font-family:'Syne';
+/* LOGO */
+.logo{
+display:flex;
+align-items:center;
+animation:logoFade 1s ease;
 }
 
+.logo img{
+height:42px;
+width:auto;
+object-fit:contain;
+border-radius:50%;
+transition:0.3s;
+}
+
+.logo img:hover{
+transform:scale(1.05);
+}
+
+@keyframes logoFade{
+from{
+opacity:0;
+transform:scale(0.8);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+/* NAV LINKS */
 .nav-links{
 display:flex;
 gap:15px;
@@ -202,6 +229,13 @@ transition:0.6s ease;
 opacity:1;
 transform:translateY(0);
 }
+
+/* MOBILE */
+@media(max-width:600px){
+.logo img{
+height:38px;
+}
+}
 </style>
 </head>
 
@@ -209,7 +243,10 @@ transform:translateY(0);
 
 <!-- NAV -->
 <nav>
-<b>Aim2Rise</b>
+<div class="logo">
+<img src="logo.png" alt="Aim2Rise Logo">
+</div>
+
 <div class="nav-links">
 <a href="#home">Home</a>
 <a href="#courses">Courses</a>
@@ -230,7 +267,6 @@ Build Confidence.<br>
 Empowering students of all ages with practical skills in academics, communication, and personality development.
 </p>
 
-<!-- BUTTONS -->
 <div class="btn-group reveal">
 
 <a href="#courses">
@@ -243,7 +279,6 @@ Empowering students of all ages with practical skills in academics, communicatio
 
 </div>
 
-<!-- STATS -->
 <div class="stats reveal">
 <div>
 <div class="stat-num" data-target="7" data-suffix="+">0</div>
