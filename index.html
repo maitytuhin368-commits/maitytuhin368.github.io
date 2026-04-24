@@ -5,27 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aim2Rise Coaching</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-
 :root{
---sky:#38bdf8;
---lime:#a3e635;
---gold:#fbbf24;
---dark:#050d1a;
---dark2:#0b1628;
+--primary:#38bdf8;
+--accent:#a3e635;
+--bg:#050d1a;
 --card:#0f1f36;
 --text:#e2eaf5;
 --muted:#7a9abf;
 }
 
+*{margin:0;padding:0;box-sizing:border-box;}
+
 body{
-font-family:'DM Sans',sans-serif;
-background:var(--dark);
+font-family:'Inter',sans-serif;
+background:var(--bg);
 color:var(--text);
-overflow-x:hidden;
+line-height:1.6;
 }
 
 /* NAV */
@@ -35,16 +33,31 @@ top:0;
 width:100%;
 display:flex;
 justify-content:space-between;
-padding:18px 40px;
-background:rgba(5,13,26,0.7);
-backdrop-filter:blur(15px);
-z-index:100;
+align-items:center;
+padding:14px 20px;
+background:rgba(5,13,26,0.9);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
-.nav-logo{font-family:'Syne';font-weight:800;}
-.nav-links{display:flex;gap:25px;}
-.nav-links a{color:var(--muted);text-decoration:none;}
-.nav-links a:hover{color:var(--sky);}
+nav b{
+font-family:'Syne';
+}
+
+.nav-links{
+display:flex;
+gap:15px;
+}
+
+.nav-links a{
+color:var(--muted);
+text-decoration:none;
+font-size:14px;
+}
+
+.nav-links a:hover{
+color:var(--primary);
+}
 
 /* HERO */
 #home{
@@ -54,51 +67,17 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-position:relative;
-overflow:hidden;
+padding:100px 20px 60px;
 }
-
-.orb{
-position:absolute;
-border-radius:50%;
-filter:blur(100px);
-opacity:0.6;
-pointer-events:none;
-}
-
-.orb1{
-width:500px;height:500px;
-background:radial-gradient(circle,var(--sky),transparent);
-top:-100px;left:-100px;
-animation:float1 10s infinite alternate ease-in-out;
-}
-
-.orb2{
-width:400px;height:400px;
-background:radial-gradient(circle,var(--lime),transparent);
-bottom:-100px;right:-100px;
-animation:float2 12s infinite alternate ease-in-out;
-}
-
-.orb3{
-width:300px;height:300px;
-background:radial-gradient(circle,var(--gold),transparent);
-top:50%;left:50%;
-transform:translate(-50%,-50%);
-animation:float3 14s infinite alternate ease-in-out;
-}
-
-@keyframes float1{to{transform:translate(200px,100px);}}
-@keyframes float2{to{transform:translate(-150px,-120px);}}
-@keyframes float3{to{transform:translate(-40%,-60%) scale(1.1);}}
 
 h1{
 font-family:'Syne';
-font-size:clamp(40px,8vw,90px);
+font-size:clamp(34px,7vw,64px);
+line-height:1.2;
 }
 
 .gradient{
-background:linear-gradient(90deg,var(--sky),var(--lime),var(--gold));
+background:linear-gradient(90deg,var(--primary),var(--accent));
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -106,94 +85,101 @@ background:linear-gradient(90deg,var(--sky),var(--lime),var(--gold));
 .hero-sub{
 margin-top:15px;
 color:var(--muted);
+max-width:550px;
 }
 
-/* BUTTON */
 .btn{
 margin-top:25px;
-padding:14px 30px;
+padding:12px 28px;
 border:none;
-border-radius:40px;
-background:linear-gradient(135deg,var(--sky),#0ea5e9);
+border-radius:30px;
+background:var(--primary);
 color:white;
 cursor:pointer;
-transition:0.3s;
+font-size:14px;
 }
 
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 15px 40px rgba(56,189,248,0.4);
-}
-
-/* COUNTERS */
-.hero-stats{
+/* STATS */
+.stats{
 display:flex;
-gap:40px;
-margin-top:50px;
+gap:25px;
+margin-top:40px;
 flex-wrap:wrap;
 justify-content:center;
 }
 
-.stat{text-align:center;}
-
 .stat-num{
-font-size:36px;
 font-family:'Syne';
-color:var(--sky);
+font-size:28px;
+color:var(--primary);
 }
 
-.stat-label{
-font-size:12px;
-color:var(--muted);
-}
-
-/* SCROLL REVEAL */
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:all 0.8s ease;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0);
-}
-
-/* SECTIONS */
+/* SECTION */
 section{
-padding:100px 20px;
+padding:70px 20px;
 text-align:center;
 }
 
+/* COURSES */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+gap:15px;
 max-width:900px;
 margin:auto;
-margin-top:40px;
+margin-top:30px;
 }
 
 .card{
 background:var(--card);
-padding:25px;
-border-radius:16px;
-transition:0.3s;
+padding:18px;
+border-radius:12px;
+transition:0.25s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 50px rgba(0,0,0,0.4);
-border:1px solid var(--sky);
+transform:translateY(-5px);
 }
 
+/* LIGHT */
 .light{
 background:#f1f5f9;
 color:#050d1a;
 }
 
-.footer{
+/* PROMISE */
+.promise{
+padding:90px 20px;
 background:#020617;
+}
+
+.promise h2{
+font-family:'Syne';
+font-size:30px;
+margin-bottom:15px;
+}
+
+.promise strong{
+color:var(--primary);
+}
+
+/* FOOTER */
+.footer{
+text-align:center;
+padding:20px;
+font-size:12px;
+color:#aaa;
+}
+
+/* REVEAL */
+.reveal{
+opacity:0;
+transform:translateY(25px);
+transition:0.6s ease;
+}
+.reveal.active{
+opacity:1;
+transform:translateY(0);
 }
 </style>
 </head>
@@ -202,7 +188,7 @@ background:#020617;
 
 <!-- NAV -->
 <nav>
-<div class="nav-logo">Aim2Rise</div>
+<b>Aim2Rise</b>
 <div class="nav-links">
 <a href="#home">Home</a>
 <a href="#courses">Courses</a>
@@ -213,119 +199,131 @@ background:#020617;
 
 <!-- HERO -->
 <section id="home">
+<h1 class="reveal">
+Build Confidence.<br>
+<span class="gradient">Speak Fluently. Succeed Academically.</span>
+</h1>
 
-<div class="orb orb1"></div>
-<div class="orb orb2"></div>
-<div class="orb orb3"></div>
+<p class="hero-sub reveal">
+Empowering students of all ages with practical skills in academics, communication, and personality development.
+</p>
 
-<h1 class="reveal">Unlock Your <span class="gradient">Full Potential</span></h1>
-<p class="hero-sub reveal">Empowering students with confidence and skills</p>
+<button class="btn reveal">Join Now</button>
 
-<button class="btn reveal">Explore Courses</button>
-
-<div class="hero-stats reveal">
-
-<div class="stat">
+<div class="stats reveal">
+<div>
 <div class="stat-num" data-target="7" data-suffix="+">0</div>
-<div class="stat-label">Years</div>
+<p>Years</p>
 </div>
 
-<div class="stat">
+<div>
 <div class="stat-num" data-target="1000" data-suffix="+">0</div>
-<div class="stat-label">Students</div>
+<p>Students</p>
 </div>
 
-<div class="stat">
+<div>
 <div class="stat-num" data-target="8">0</div>
-<div class="stat-label">Courses</div>
+<p>Courses</p>
 </div>
 
-<div class="stat">
+<div>
 <div class="stat-num" data-target="6" data-suffix="+">0</div>
-<div class="stat-label">Regions</div>
+<p>Regions</p>
 </div>
-
 </div>
-
 </section>
 
 <!-- COURSES -->
 <section id="courses">
-<h2 class="reveal">Courses</h2>
+<h2 class="reveal">Courses We Offer</h2>
+
 <div class="grid">
-<div class="card reveal">Grades 5–10</div>
-<div class="card reveal">11–12 Commerce</div>
-<div class="card reveal">B.Com & BBA</div>
-<div class="card reveal">Spoken English</div>
-<div class="card reveal">English Grammar</div>
-<div class="card reveal">Computer Basics</div>
+<div class="card reveal">Grades 5–10 (All Subjects)</div>
+<div class="card reveal">11th & 12th (Commerce & Humanities)</div>
+<div class="card reveal">B.Com & BBA Classes</div>
+<div class="card reveal">Spoken English (Basic to Advanced)</div>
+<div class="card reveal">English Grammar (Foundation to Advanced)</div>
+<div class="card reveal">Personality Development</div>
+<div class="card reveal">Computer Basic Course</div>
+<div class="card reveal">Reasoning Classes</div>
 </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="light">
-<h2 class="reveal">Teaching Approach</h2>
-<p class="reveal">Personal attention + innovative methods</p>
+<h2 class="reveal">Why Choose Aim2Rise</h2>
+
+<p class="reveal">
+• Personal attention to every student<br>
+• Practical and engaging teaching methods<br>
+• Courses designed for real-world skills<br>
+• Online and offline learning flexibility
+</p>
 </section>
 
 <!-- REACH -->
 <section id="reach">
-<h2 class="reveal">Global Reach</h2>
-<p class="reveal">India, Australia, Dubai & more</p>
+<h2 class="reveal">Our Reach</h2>
+
+<p class="reveal">
+Online: Roorkee, West Bengal, Rajasthan, Australia, Dubai, Punjab<br>
+Offline: Zirakpur, Punjab
+</p>
 </section>
 
 <!-- PROMISE -->
-<section class="footer">
+<section class="promise">
 <h2 class="reveal">Our Promise</h2>
-<p class="reveal">Improvement is our guarantee</p>
+
+<p class="reveal"><strong>Improvement is our guarantee.</strong></p>
+<p class="reveal">Hard work is your responsibility.</p>
 </section>
 
-<!-- SCRIPTS -->
+<!-- FOOTER -->
+<div class="footer">
+© 2025 Aim2Rise Coaching
+</div>
+
 <script>
 // COUNTER
-function animateCounter(el){
-const target = +el.getAttribute("data-target");
-const suffix = el.getAttribute("data-suffix") || "";
-let count = 0;
-const speed = target / 120;
+function animate(el){
+const target=+el.dataset.target;
+const suffix=el.dataset.suffix||"";
+let count=0;
+const inc=target/100;
 
 function update(){
-count += speed;
-if(count < target){
-el.textContent = Math.floor(count) + suffix;
+count+=inc;
+if(count<target){
+el.innerText=Math.floor(count)+suffix;
 requestAnimationFrame(update);
 }else{
-el.textContent = target + suffix;
+el.innerText=target+suffix;
 }
 }
 update();
 }
 
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-document.querySelectorAll(".stat-num").forEach(el=>animateCounter(el));
-observer.disconnect();
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+document.querySelectorAll(".stat-num").forEach(el=>animate(el));
+obs.disconnect();
 }
 });
 },{threshold:0.5});
 
-observer.observe(document.querySelector(".hero-stats"));
+obs.observe(document.querySelector(".stats"));
 
-// SCROLL REVEAL
+// REVEAL
 function reveal(){
-const reveals = document.querySelectorAll('.reveal');
-reveals.forEach(el=>{
-const windowHeight = window.innerHeight;
-const elementTop = el.getBoundingClientRect().top;
-
-if(elementTop < windowHeight - 100){
-el.classList.add('active');
+document.querySelectorAll(".reveal").forEach(el=>{
+if(el.getBoundingClientRect().top < window.innerHeight-80){
+el.classList.add("active");
 }
 });
 }
-
-window.addEventListener('scroll', reveal);
+window.addEventListener("scroll",reveal);
 reveal();
 </script>
 
