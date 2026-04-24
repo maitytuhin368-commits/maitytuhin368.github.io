@@ -32,7 +32,7 @@ position:fixed;
 top:0;
 width:100%;
 display:flex;
-justify-content:flex-end;
+justify-content:center;
 align-items:center;
 padding:14px 20px;
 background:rgba(5,13,26,0.9);
@@ -42,13 +42,14 @@ z-index:1000;
 
 .nav-links{
 display:flex;
-gap:15px;
+gap:25px;
 }
 
 .nav-links a{
 color:var(--muted);
 text-decoration:none;
-font-size:14px;
+font-size:15px;
+letter-spacing:0.5px;
 }
 
 .nav-links a:hover{
@@ -66,13 +67,16 @@ text-align:center;
 padding:100px 20px 60px;
 }
 
-/* 🔥 LOGO FIX + ANIMATION */
+/* LOGO */
 .hero-logo{
 width:140px;
 height:140px;
 object-fit:contain;
 margin-bottom:20px;
 animation:logoFade 1.2s ease;
+background:#050d1a;
+border-radius:50%;
+padding:10px;
 }
 
 @keyframes logoFade{
@@ -230,8 +234,7 @@ transform:translateY(0);
 <!-- HERO -->
 <section id="home">
 
-<!-- ✅ LOGO (FIXED) -->
-<img src="aim2rise_logo-1.png" class="hero-logo reveal" loading="eager" alt="Aim2Rise Logo">
+<img src="aim2rise_logo-2.png" class="hero-logo reveal" loading="eager" alt="Aim2Rise Logo">
 
 <h1 class="reveal">
 Build Confidence.<br>
@@ -327,8 +330,8 @@ Offline: Zirakpur, Punjab
 <p>© 2025 Aim2Rise Coaching</p>
 
 <p>
-📧 aim2rise309@gmail.com<br>
-📞 88475 53166
+aim2rise309@gmail.com<br>
+88475 53166
 </p>
 
 <p>
