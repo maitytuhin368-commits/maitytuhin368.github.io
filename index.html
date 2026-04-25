@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aim2Rise Coaching</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--primary:#38bdf8;
+--accent:#a3e635;
+--bg:#050d1a;
+--card:#0f1f36;
+--text:#e2eaf5;
+--muted:#7a9abf;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:14px 20px;
+background:rgba(5,13,26,0.9);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+color:var(--muted);
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:var(--primary);
+}
+
+#home{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:100px 20px 60px;
+}
+
+.hero-logo{
+width:180px;
+height:180px;
+margin-bottom:25px;
+object-fit:contain;
+}
+
+h1{
+font-family:'Syne';
+font-size:clamp(34px,7vw,64px);
+line-height:1.2;
+}
+
+.gradient{
+background:linear-gradient(90deg,var(--primary),var(--accent));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-sub{
+margin-top:15px;
+color:var(--muted);
+max-width:550px;
+}
+
+.btn{
+margin-top:20px;
+padding:12px 28px;
+border:none;
+border-radius:30px;
+background:var(--primary);
+color:white;
+cursor:pointer;
+font-size:14px;
+}
+
+.btn-secondary{
+background:transparent;
+border:1px solid var(--primary);
+color:var(--primary);
+}
+
+.btn-group{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:25px;
+}
+
+.stats{
+display:flex;
+gap:25px;
+margin-top:40px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.stat-num{
+font-family:'Syne';
+font-size:28px;
+color:var(--primary);
+}
+
+section{
+padding:70px 20px;
+text-align:center;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+max-width:900px;
+margin:auto;
+margin-top:30px;
+}
+
+.card{
+background:var(--card);
+padding:18px;
+border-radius:12px;
+transition:0.25s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.light{
+background:#f1f5f9;
+color:#050d1a;
+}
+
+.promise{
+padding:90px 20px;
+background:#020617;
+}
+
+.promise h2{
+font-family:'Syne';
+font-size:30px;
+margin-bottom:15px;
+}
+
+.promise strong{
+color:var(--primary);
+}
+
+.footer{
+text-align:center;
+padding:25px;
+font-size:13px;
+color:#aaa;
+}
+
+.footer a{
+color:var(--primary);
+text-decoration:none;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(25px);
+transition:0.6s ease;
+}
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="nav-links">
+<a href="#home">Home</a>
+<a href="#courses">Courses</a>
+<a href="#about">About</a>
+<a href="#reach">Reach</a>
+</div>
+</nav>
+
+<section id="home">
+
+<img src="aim2rise_logo-2.png" class="hero-logo reveal" alt="Aim2Rise Logo">
+
+<h1 class="reveal">
+Build Confidence.<br>
+<span class="gradient">Speak Fluently. Succeed Academically.</span>
+</h1>
+
+<p class="hero-sub reveal">
+Empowering students of all ages with practical skills in academics, communication, and personality development.
+</p>
+
+<div class="btn-group reveal">
+<a href="#courses">
+<button class="btn">Explore Courses</button>
+</a>
+<a href="https://instagram.com/aim.2.rise" target="_blank">
+<button class="btn btn-secondary">Instagram ↗</button>
+</a>
+</div>
+
+<div class="stats reveal">
+<div>
+<div class="stat-num" data-target="7" data-suffix="+">0</div>
+<p>Years</p>
+</div>
+<div>
+<div class="stat-num" data-target="1000" data-suffix="+">0</div>
+<p>Students</p>
+</div>
+<div>
+<div class="stat-num" data-target="8">0</div>
+<p>Courses</p>
+</div>
+<div>
+<div class="stat-num" data-target="6" data-suffix="+">0</div>
+<p>Regions</p>
+</div>
+</div>
+
+</section>
+
+<section id="courses">
+<h2 class="reveal">Courses We Offer</h2>
+<div class="grid">
+<div class="card reveal">Grades 5–10 (All Subjects)</div>
+<div class="card reveal">11th & 12th (Commerce & Humanities)</div>
+<div class="card reveal">B.Com & BBA Classes</div>
+<div class="card reveal">Spoken English (Basic to Advanced)</div>
+<div class="card reveal">English Grammar (Foundation to Advanced)</div>
+<div class="card reveal">Personality Development</div>
+<div class="card reveal">Computer Basic Course</div>
+<div class="card reveal">Reasoning Classes</div>
+</div>
+</section>
+
+<section id="about" class="light">
+<h2 class="reveal">Why Choose Aim2Rise?</h2>
+<p class="reveal">
+• Personal attention to every student<br>
+• Practical and engaging teaching methods<br>
+• Courses designed for real-world skills<br>
+• Online and offline learning flexibility
+</p>
+</section>
+
+<section id="reach">
+<h2 class="reveal">Our Reach</h2>
+<p class="reveal">
+Online: Roorkee, West Bengal, Rajasthan, Australia, Dubai, Punjab<br>
+Offline: Zirakpur, Punjab
+</p>
+</section>
+
+<section class="promise">
+<h2 class="reveal">Our Promise</h2>
+<p class="reveal"><strong>Improvement is our guarantee.</strong></p>
+<p class="reveal">Hard work is your responsibility.</p>
+</section>
+
+<div class="footer">
+<p>© 2025 Aim2Rise Coaching</p>
+<p>📧 aim2rise309@gmail.com</p>
+<p>📞 88475 53166</p>
+<p>Instagram: <a href="https://instagram.com/aim.2.rise" target="_blank">@aim.2.rise ↗</a></p>
+</div>
+
+<script>
+function animate(el){
+const target=+el.dataset.target;
+const suffix=el.dataset.suffix||"";
+let count=0;
+const inc=target/100;
+function update(){
+count+=inc;
+if(count<target){
+el.innerText=Math.floor(count)+suffix;
+requestAnimationFrame(update);
+}else{
+el.innerText=target+suffix;
+}
+}
+update();
+}
+
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+document.querySelectorAll(".stat-num").forEach(el=>animate(el));
+obs.disconnect();
+}
+});
+},{threshold:0.5});
+
+obs.observe(document.querySelector(".stats"));
+
+function reveal(){
+document.querySelectorAll(".reveal").forEach(el=>{
+if(el.getBoundingClientRect().top < window.innerHeight-80){
+el.classList.add("active");
+}
+});
+}
+window.addEventListener("scroll",reveal);
+reveal();
+</script>
+
+</body>
+</html>
